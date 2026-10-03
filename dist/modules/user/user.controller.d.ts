@@ -11,7 +11,7 @@ export declare class UserController {
         email: string;
         full_name: string;
         phone: string | null;
-        status: import("../../configs/constants.js").UserStatus;
+        status: string;
         role: {
             id: number;
             code: string;
@@ -26,7 +26,7 @@ export declare class UserController {
         email: string;
         full_name: string;
         phone: string | null;
-        status: import("../../configs/constants.js").UserStatus;
+        status: string;
         roles: {
             id: number;
             code: string;
@@ -41,7 +41,7 @@ export declare class UserController {
         email: string;
         full_name: string;
         phone: string | null;
-        status: import("../../configs/constants.js").UserStatus;
+        status: string;
         roles: {
             id: number;
             code: string;
@@ -56,7 +56,7 @@ export declare class UserController {
         email: string;
         full_name: string;
         phone: string | null;
-        status: import("../../configs/constants.js").UserStatus;
+        status: string;
         roles: {
             id: number;
             code: string;

@@ -8,7 +8,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { Column, CreateDateColumn, Entity, JoinColumn, JoinTable, ManyToMany, ManyToOne, PrimaryGeneratedColumn, UpdateDateColumn, } from 'typeorm';
-import { UserStatus } from '../../configs/constants.js';
 import { Company } from './company.entity.js';
 import { Role } from './role.entity.js';
 let User = class User {
@@ -26,11 +25,11 @@ let User = class User {
     updated_at;
 };
 __decorate([
-    PrimaryGeneratedColumn({ type: 'int', name: 'id' }),
+    PrimaryGeneratedColumn(),
     __metadata("design:type", Number)
 ], User.prototype, "id", void 0);
 __decorate([
-    Column({ type: 'int', nullable: true, name: 'company_id' }),
+    Column({ type: 'integer', nullable: true, name: 'company_id' }),
     __metadata("design:type", Object)
 ], User.prototype, "company_id", void 0);
 __decorate([
@@ -62,9 +61,9 @@ __decorate([
 ], User.prototype, "phone", void 0);
 __decorate([
     Column({
-        type: 'enum',
-        enum: UserStatus,
-        default: UserStatus.ACTIVE,
+        type: 'varchar',
+        length: 50,
+        default: 'ACTIVE',
         name: 'status',
     }),
     __metadata("design:type", String)

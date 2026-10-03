@@ -1,0 +1,50 @@
+services:
+  - type: web
+    name: celra-backend
+    env: node
+    plan: free
+    rootDirectory: api_nestjs_celra
+    buildCommand: npm install && npm run build
+    startCommand: node dist/main.js
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DB_TYPE
+        value: postgres
+      - key: DB_HOST
+        fromDatabase:
+          name: celra-postgres
+          property: host
+      - key: DB_PORT
+        fromDatabase:
+          name: celra-postgres
+          property: port
+      - key: DB_USERNAME
+        fromDatabase:
+          name: celra-postgres
+          property: user
+      - key: DB_PASSWORD
+        fromDatabase:
+          name: celra-postgres
+          property: password
+      - key: DB_DATABASE
+        fromDatabase:
+          name: celra-postgres
+          property: database
+      - key: DB_SYNCHRONIZE
+        value: "true"
+      - key: DB_LOGGING
+        value: "false"
+      - key: JWT_SECRET
+        generateValue: true
+      - key: JWT_EXPIRES_IN
+        value: 7d
+      - key: FRONTEND_URL
+        value: https://web-react-celra.vercel.app
+
+databases:
+  - name: celra-postgres
+    plan: free
+    databaseName: celra_db
+    user: celra_user

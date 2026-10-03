@@ -1,4 +1,3 @@
-import { CompanyStatus } from '../../configs/constants.js';
 import { User } from './user.entity.js';
 export declare class Company {
     id: number;
@@ -7,7 +6,7 @@ export declare class Company {
     email: string;
     phone: string | null;
     address: string | null;
-    status: CompanyStatus;
+    status: string;
     users: User[];
     created_at: Date;
     updated_at: Date;

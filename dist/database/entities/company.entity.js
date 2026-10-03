@@ -8,7 +8,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { Column, CreateDateColumn, Entity, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn, } from 'typeorm';
-import { CompanyStatus } from '../../configs/constants.js';
 import { User } from './user.entity.js';
 let Company = class Company {
     id;
@@ -23,7 +22,7 @@ let Company = class Company {
     updated_at;
 };
 __decorate([
-    PrimaryGeneratedColumn({ type: 'int', name: 'id' }),
+    PrimaryGeneratedColumn(),
     __metadata("design:type", Number)
 ], Company.prototype, "id", void 0);
 __decorate([
@@ -48,9 +47,9 @@ __decorate([
 ], Company.prototype, "address", void 0);
 __decorate([
     Column({
-        type: 'enum',
-        enum: CompanyStatus,
-        default: CompanyStatus.ACTIVE,
+        type: 'varchar',
+        length: 50,
+        default: 'ACTIVE',
         name: 'status',
     }),
     __metadata("design:type", String)

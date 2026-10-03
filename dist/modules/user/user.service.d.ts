@@ -1,5 +1,4 @@
 import { Repository } from 'typeorm';
-import { UserStatus } from '../../configs/constants.js';
 import { Role } from '../../database/entities/role.entity.js';
 import { User } from '../../database/entities/user.entity.js';
 import { CreateEmployeeDto } from './dto/create-employee.dto.js';
@@ -16,7 +15,7 @@ export declare class UserService {
         email: string;
         full_name: string;
         phone: string | null;
-        status: UserStatus;
+        status: string;
         role: {
             id: number;
             code: string;
@@ -31,7 +30,7 @@ export declare class UserService {
         email: string;
         full_name: string;
         phone: string | null;
-        status: UserStatus;
+        status: string;
         roles: {
             id: number;
             code: string;
@@ -46,7 +45,7 @@ export declare class UserService {
         email: string;
         full_name: string;
         phone: string | null;
-        status: UserStatus;
+        status: string;
         roles: {
             id: number;
             code: string;
@@ -61,7 +60,7 @@ export declare class UserService {
         email: string;
         full_name: string;
         phone: string | null;
-        status: UserStatus;
+        status: string;
         roles: {
             id: number;
             code: string;

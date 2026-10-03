@@ -17,7 +17,7 @@ let PasswordReset = class PasswordReset {
     created_at;
 };
 __decorate([
-    PrimaryGeneratedColumn({ type: 'int', name: 'id' }),
+    PrimaryGeneratedColumn(),
     __metadata("design:type", Number)
 ], PasswordReset.prototype, "id", void 0);
 __decorate([
@@ -30,7 +30,7 @@ __decorate([
     __metadata("design:type", String)
 ], PasswordReset.prototype, "token", void 0);
 __decorate([
-    Column({ type: 'datetime', name: 'expires_at' }),
+    Column({ type: 'timestamp', name: 'expires_at' }),
     __metadata("design:type", Date)
 ], PasswordReset.prototype, "expires_at", void 0);
 __decorate([

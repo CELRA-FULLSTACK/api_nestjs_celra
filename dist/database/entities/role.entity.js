@@ -22,7 +22,7 @@ let Role = class Role {
     created_at;
 };
 __decorate([
-    PrimaryGeneratedColumn({ type: 'int', name: 'id' }),
+    PrimaryGeneratedColumn(),
     __metadata("design:type", Number)
 ], Role.prototype, "id", void 0);
 __decorate([
@@ -53,7 +53,7 @@ __decorate([
     __metadata("design:type", Array)
 ], Role.prototype, "permissions", void 0);
 __decorate([
-    Column({ type: 'json', nullable: true, name: 'permission_matrix' }),
+    Column({ type: 'jsonb', nullable: true, name: 'permission_matrix' }),
     __metadata("design:type", Object)
 ], Role.prototype, "permission_matrix", void 0);
 __decorate([

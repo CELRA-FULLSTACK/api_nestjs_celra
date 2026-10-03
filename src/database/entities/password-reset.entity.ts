@@ -8,7 +8,7 @@ import {
 
 @Entity('password_resets')
 export class PasswordReset {
-  @PrimaryGeneratedColumn({ type: 'int', name: 'id' })
+  @PrimaryGeneratedColumn()
   id: number;
 
   @Column({ type: 'varchar', length: 255, name: 'email' })
@@ -18,7 +18,7 @@ export class PasswordReset {
   @Column({ type: 'varchar', length: 255, name: 'token' })
   token: string;
 
-  @Column({ type: 'datetime', name: 'expires_at' })
+  @Column({ type: 'timestamp', name: 'expires_at' })
   expires_at: Date;
 
   @Column({ type: 'boolean', default: false, name: 'is_used' })

@@ -237,7 +237,7 @@ export class AuthService {
         token,
         expires_at: expiresAt,
         is_used: false,
-      });
+      } as any);
       await this.passwordResetRepo.save(passwordReset);
 
       // Gửi link qua mailer

@@ -9,7 +9,7 @@ export declare class Customer {
     email: string | null;
     address: string | null;
     notes: string | null;
-    status: CustomerStatus;
+    status: string;
     created_by: number | null;
     created_at: Date;
     updated_at: Date;

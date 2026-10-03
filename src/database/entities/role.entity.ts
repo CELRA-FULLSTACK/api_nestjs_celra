@@ -11,7 +11,7 @@ import { User } from './user.entity.js';
 
 @Entity('roles')
 export class Role {
-  @PrimaryGeneratedColumn({ type: 'int', name: 'id' })
+  @PrimaryGeneratedColumn()
   id: number;
 
   @Column({ type: 'varchar', length: 50, unique: true, name: 'code' })
@@ -36,7 +36,7 @@ export class Role {
   })
   permissions: Permission[];
 
-  @Column({ type: 'json', nullable: true, name: 'permission_matrix' })
+  @Column({ type: 'jsonb', nullable: true, name: 'permission_matrix' })
   permission_matrix: RolePermission[] | null;
 
   @ManyToMany(() => User, (user: User) => user.roles)

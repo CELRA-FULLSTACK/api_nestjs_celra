@@ -18,7 +18,7 @@ let Permission = class Permission {
     created_at;
 };
 __decorate([
-    PrimaryGeneratedColumn({ type: 'int', name: 'id' }),
+    PrimaryGeneratedColumn(),
     __metadata("design:type", Number)
 ], Permission.prototype, "id", void 0);
 __decorate([

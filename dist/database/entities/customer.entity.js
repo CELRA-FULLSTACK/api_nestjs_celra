@@ -26,7 +26,7 @@ let Customer = class Customer {
     updated_at;
 };
 __decorate([
-    PrimaryGeneratedColumn({ type: 'int', name: 'id' }),
+    PrimaryGeneratedColumn(),
     __metadata("design:type", Number)
 ], Customer.prototype, "id", void 0);
 __decorate([
@@ -51,15 +51,15 @@ __decorate([
 ], Customer.prototype, "notes", void 0);
 __decorate([
     Column({
-        type: 'enum',
-        enum: CustomerStatus,
-        default: CustomerStatus.ACTIVE,
+        type: 'varchar',
+        length: 50,
+        default: 'ACTIVE',
         name: 'status',
     }),
     __metadata("design:type", String)
 ], Customer.prototype, "status", void 0);
 __decorate([
-    Column({ type: 'int', nullable: true, name: 'created_by' }),
+    Column({ type: 'integer', nullable: true, name: 'created_by' }),
     __metadata("design:type", Object)
 ], Customer.prototype, "created_by", void 0);
 __decorate([

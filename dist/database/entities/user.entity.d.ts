@@ -1,4 +1,3 @@
-import { UserStatus } from '../../configs/constants.js';
 import { Company } from './company.entity.js';
 import { Role } from './role.entity.js';
 export declare class User {
@@ -10,7 +9,7 @@ export declare class User {
     password_hash: string;
     full_name: string;
     phone: string | null;
-    status: UserStatus;
+    status: string;
     roles: Role[];
     created_at: Date;
     updated_at: Date;

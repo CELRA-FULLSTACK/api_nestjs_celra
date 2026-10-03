@@ -13,7 +13,7 @@ export enum CustomerStatus {
 
 @Entity('customers')
 export class Customer {
-  @PrimaryGeneratedColumn({ type: 'int', name: 'id' })
+  @PrimaryGeneratedColumn()
   id: number;
 
   @Column({ type: 'varchar', length: 255, name: 'name' })
@@ -32,14 +32,14 @@ export class Customer {
   notes: string | null;
 
   @Column({
-    type: 'enum',
-    enum: CustomerStatus,
-    default: CustomerStatus.ACTIVE,
+    type: 'varchar',
+    length: 50,
+    default: 'ACTIVE',
     name: 'status',
   })
-  status: CustomerStatus;
+  status: string;
 
-  @Column({ type: 'int', nullable: true, name: 'created_by' })
+  @Column({ type: 'integer', nullable: true, name: 'created_by' })
   created_by: number | null;
 
   @CreateDateColumn({ name: 'created_at' })

@@ -15,10 +15,10 @@ import { Role } from './role.entity.js';
 
 @Entity('users')
 export class User {
-  @PrimaryGeneratedColumn({ type: 'int', name: 'id' })
+  @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ type: 'int', nullable: true, name: 'company_id' })
+  @Column({ type: 'integer', nullable: true, name: 'company_id' })
   company_id: number | null;
 
   @ManyToOne(() => Company, (company: Company) => company.users, {
@@ -43,12 +43,12 @@ export class User {
   phone: string | null;
 
   @Column({
-    type: 'enum',
-    enum: UserStatus,
-    default: UserStatus.ACTIVE,
+    type: 'varchar',
+    length: 50,
+    default: 'ACTIVE',
     name: 'status',
   })
-  status: UserStatus;
+  status: string;
 
   @ManyToMany(() => Role, (role: Role) => role.users, { cascade: true })
   @JoinTable({

@@ -11,7 +11,7 @@ import { User } from './user.entity.js';
 
 @Entity('companies')
 export class Company {
-  @PrimaryGeneratedColumn({ type: 'int', name: 'id' })
+  @PrimaryGeneratedColumn()
   id: number;
 
   @Column({ type: 'varchar', length: 255, name: 'name' })
@@ -30,12 +30,12 @@ export class Company {
   address: string | null;
 
   @Column({
-    type: 'enum',
-    enum: CompanyStatus,
-    default: CompanyStatus.ACTIVE,
+    type: 'varchar',
+    length: 50,
+    default: 'ACTIVE',
     name: 'status',
   })
-  status: CompanyStatus;
+  status: string;
   @OneToMany(() => User, (user: User) => user.company)
   users: User[];
 

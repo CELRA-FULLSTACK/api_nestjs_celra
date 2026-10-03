@@ -3,7 +3,7 @@ export declare const envConfig: (() => {
     nodeEnv: string;
     frontendUrl: string;
     database: {
-        type: "mysql";
+        type: "postgres";
         host: string;
         port: number;
         username: string;
@@ -24,7 +24,7 @@ export declare const envConfig: (() => {
     nodeEnv: string;
     frontendUrl: string;
     database: {
-        type: "mysql";
+        type: "postgres";
         host: string;
         port: number;
         username: string;
