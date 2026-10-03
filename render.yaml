@@ -3,7 +3,6 @@ services:
     name: celra-backend
     env: node
     plan: free
-    rootDirectory: api_nestjs_celra
     buildCommand: npm install && npm run build
     startCommand: node dist/main.js
     healthCheckPath: /health
