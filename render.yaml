@@ -3,7 +3,7 @@ services:
     name: celra-backend
     env: node
     plan: free
-    buildCommand: npm install && npm run build
+    buildCommand: npm ci --include=dev && npm run build
     startCommand: node dist/main.js
     healthCheckPath: /health
     envVars:
