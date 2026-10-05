@@ -19,6 +19,7 @@ import * as crypto from 'crypto';
 import { DataSource, Repository } from 'typeorm';
 import { CompanyStatus, RoleCode, UserStatus } from '../../configs/constants.js';
 import { Company } from '../../database/entities/company.entity.js';
+import { ComplianceProfile } from '../../database/entities/compliance-profile.entity.js';
 import { PasswordReset } from '../../database/entities/password-reset.entity.js';
 import { Role } from '../../database/entities/role.entity.js';
 import { User } from '../../database/entities/user.entity.js';
@@ -88,6 +89,22 @@ let AuthService = AuthService_1 = class AuthService {
                 roles: [companyAdminRole],
             });
             const savedUser = await manager.save(newUser);
+            const initialProfile = manager.create(ComplianceProfile, {
+                company_id: savedCompany.id,
+                total_employees: 0,
+                probation_employees: 0,
+                official_employees: 0,
+                has_internal_labor_rules: false,
+                has_registered_labor_rules: false,
+                has_signed_all_labor_contracts: false,
+                has_social_insurance_registration: false,
+                tax_declaration_cycle: 'QUARTERLY',
+                accounting_standard: 'CIRCULAR_133',
+                has_electronic_invoices: true,
+                has_digital_signature: false,
+                completeness_score: 10,
+            });
+            await manager.save(initialProfile);
             this.logger.log(`Đăng ký doanh nghiệp thành công: ${savedCompany.name} (MST: ${savedCompany.tax_code}) - Admin: ${savedUser.username}`);
             return {
                 company: {

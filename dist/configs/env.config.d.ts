@@ -11,6 +11,9 @@ export declare const envConfig: (() => {
         database: string;
         synchronize: boolean;
         logging: boolean;
+        ssl: boolean | {
+            rejectUnauthorized: boolean;
+        };
     };
     jwt: {
         secret: string;
@@ -32,6 +35,9 @@ export declare const envConfig: (() => {
         database: string;
         synchronize: boolean;
         logging: boolean;
+        ssl: boolean | {
+            rejectUnauthorized: boolean;
+        };
     };
     jwt: {
         secret: string;

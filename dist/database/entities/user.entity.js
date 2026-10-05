@@ -75,7 +75,7 @@ __decorate([
         joinColumn: { name: 'user_id', referencedColumnName: 'id' },
         inverseJoinColumn: { name: 'role_id', referencedColumnName: 'id' },
     }),
-    __metadata("design:type", Array)
+    __metadata("design:type", Object)
 ], User.prototype, "roles", void 0);
 __decorate([
     CreateDateColumn({ name: 'created_at' }),

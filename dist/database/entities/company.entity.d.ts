@@ -1,3 +1,4 @@
+import { type Relation } from 'typeorm';
 import { User } from './user.entity.js';
 export declare class Company {
     id: number;
@@ -7,7 +8,7 @@ export declare class Company {
     phone: string | null;
     address: string | null;
     status: string;
-    users: User[];
+    users: Relation<User[]>;
     created_at: Date;
     updated_at: Date;
 }

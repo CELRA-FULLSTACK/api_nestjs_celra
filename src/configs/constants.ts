@@ -25,6 +25,68 @@ export enum PermissionCode {
   // Quyền liên quan thông tin doanh nghiệp
   COMPANY_VIEW = 'company:view',
   COMPANY_UPDATE = 'company:update',
+
+  // Quyền liên quan hồ sơ & tuân thủ pháp lý
+  COMPLIANCE_VIEW = 'compliance:view',
+  COMPLIANCE_ASSESS = 'compliance:assess',
+  COMPLIANCE_TASK_UPDATE = 'compliance:task_update',
+  PROFILE_VIEW = 'profile:view',
+  PROFILE_UPDATE = 'profile:update',
+  TASK_VIEW = 'task:view',
+  TASK_UPDATE = 'task:update',
+  EVIDENCE_UPLOAD = 'evidence:upload',
+  EVIDENCE_VIEW = 'evidence:view',
+
+  // Quyền liên quan kho tri thức pháp lý
+  LEGAL_VIEW = 'legal:view',
+  LEGAL_MANAGE = 'legal:manage',
+}
+
+/**
+ * Trạng thái công việc tuân thủ (Kanban 4 cột)
+ */
+export enum TaskStatus {
+  TODO = 'TODO',
+  IN_PROGRESS = 'IN_PROGRESS',
+  RESOLVE = 'RESOLVE',
+  DONE = 'DONE',
+}
+
+/**
+ * Mức độ nghiêm trọng của rủi ro tuân thủ
+ */
+export enum SeverityLevel {
+  CRITICAL = 'CRITICAL',
+  MAJOR = 'MAJOR',
+  STANDARD = 'STANDARD',
+}
+
+/**
+ * Trạng thái phiên đánh giá tuân thủ
+ */
+export enum AssessmentStatus {
+  IN_PROGRESS = 'IN_PROGRESS',
+  COMPLETED = 'COMPLETED',
+  FAILED = 'FAILED',
+}
+
+/**
+ * Kết quả phân tích từng điều kiện nghĩa vụ
+ */
+export enum ComplianceItemStatus {
+  COMPLIANT = 'COMPLIANT',
+  NON_COMPLIANT = 'NON_COMPLIANT',
+  MISSING_EVIDENCE = 'MISSING_EVIDENCE',
+  NEED_EXPERT = 'NEED_EXPERT',
+}
+
+/**
+ * Trạng thái xác thực của hồ sơ minh chứng
+ */
+export enum EvidenceVerificationStatus {
+  PENDING = 'PENDING',
+  APPROVED = 'APPROVED',
+  REJECTED = 'REJECTED',
 }
 
 /**

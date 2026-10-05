@@ -50,7 +50,7 @@ __decorate([
         joinColumn: { name: 'role_id', referencedColumnName: 'id' },
         inverseJoinColumn: { name: 'permission_id', referencedColumnName: 'id' },
     }),
-    __metadata("design:type", Array)
+    __metadata("design:type", Object)
 ], Role.prototype, "permissions", void 0);
 __decorate([
     Column({ type: 'jsonb', nullable: true, name: 'permission_matrix' }),
@@ -58,7 +58,7 @@ __decorate([
 ], Role.prototype, "permission_matrix", void 0);
 __decorate([
     ManyToMany(() => User, (user) => user.roles),
-    __metadata("design:type", Array)
+    __metadata("design:type", Object)
 ], Role.prototype, "users", void 0);
 __decorate([
     CreateDateColumn({ name: 'created_at' }),

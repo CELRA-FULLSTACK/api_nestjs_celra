@@ -5,6 +5,7 @@ import {
   JoinTable,
   ManyToMany,
   PrimaryGeneratedColumn,
+  type Relation,
 } from 'typeorm';
 import { Permission } from './permission.entity.js';
 import { User } from './user.entity.js';
@@ -34,13 +35,13 @@ export class Role {
     joinColumn: { name: 'role_id', referencedColumnName: 'id' },
     inverseJoinColumn: { name: 'permission_id', referencedColumnName: 'id' },
   })
-  permissions: Permission[];
+  permissions: Relation<Permission[]>;
 
   @Column({ type: 'jsonb', nullable: true, name: 'permission_matrix' })
   permission_matrix: RolePermission[] | null;
 
   @ManyToMany(() => User, (user: User) => user.roles)
-  users: User[];
+  users: Relation<User[]>;
 
   @CreateDateColumn({ name: 'created_at' })
   created_at: Date;

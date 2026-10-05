@@ -7,6 +7,7 @@ import {
   ManyToMany,
   ManyToOne,
   PrimaryGeneratedColumn,
+  type Relation,
   UpdateDateColumn,
 } from 'typeorm';
 import { UserStatus } from '../../configs/constants.js';
@@ -25,7 +26,7 @@ export class User {
     onDelete: 'RESTRICT',
   })
   @JoinColumn({ name: 'company_id' })
-  company: Company | null;
+  company: Relation<Company> | null;
 
   @Column({ type: 'varchar', length: 100, unique: true, name: 'username' })
   username: string;
@@ -56,7 +57,7 @@ export class User {
     joinColumn: { name: 'user_id', referencedColumnName: 'id' },
     inverseJoinColumn: { name: 'role_id', referencedColumnName: 'id' },
   })
-  roles: Role[];
+  roles: Relation<Role[]>;
 
   @CreateDateColumn({ name: 'created_at' })
   created_at: Date;

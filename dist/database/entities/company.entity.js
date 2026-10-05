@@ -56,7 +56,7 @@ __decorate([
 ], Company.prototype, "status", void 0);
 __decorate([
     OneToMany(() => User, (user) => user.company),
-    __metadata("design:type", Array)
+    __metadata("design:type", Object)
 ], Company.prototype, "users", void 0);
 __decorate([
     CreateDateColumn({ name: 'created_at' }),

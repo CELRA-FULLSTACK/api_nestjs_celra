@@ -4,6 +4,7 @@ import {
   Entity,
   ManyToMany,
   PrimaryGeneratedColumn,
+  type Relation,
 } from 'typeorm';
 import { Role } from './role.entity.js';
 
@@ -22,7 +23,7 @@ export class Permission {
   module: string;
 
   @ManyToMany(() => Role, (role: Role) => role.permissions)
-  roles: Role[];
+  roles: Relation<Role[]>;
 
   @CreateDateColumn({ name: 'created_at' })
   created_at: Date;

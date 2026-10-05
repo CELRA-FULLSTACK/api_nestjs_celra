@@ -4,6 +4,7 @@ import {
   Entity,
   OneToMany,
   PrimaryGeneratedColumn,
+  type Relation,
   UpdateDateColumn,
 } from 'typeorm';
 import { CompanyStatus } from '../../configs/constants.js';
@@ -37,7 +38,7 @@ export class Company {
   })
   status: string;
   @OneToMany(() => User, (user: User) => user.company)
-  users: User[];
+  users: Relation<User[]>;
 
   @CreateDateColumn({ name: 'created_at' })
   created_at: Date;

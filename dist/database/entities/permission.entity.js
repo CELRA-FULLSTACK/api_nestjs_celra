@@ -35,7 +35,7 @@ __decorate([
 ], Permission.prototype, "module", void 0);
 __decorate([
     ManyToMany(() => Role, (role) => role.permissions),
-    __metadata("design:type", Array)
+    __metadata("design:type", Object)
 ], Permission.prototype, "roles", void 0);
 __decorate([
     CreateDateColumn({ name: 'created_at' }),
